@@ -16,10 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <img
         src="${scores.icon}"
         alt="${scores.category}"
-        id="icon"
         />
-        <h2 class="score__category" id="category">${scores.category}</h2>
-        <h2 class="score__number" id="score">${scores.score} <span>/ 100</span></h2>
+        <h2 class="score__category" >${scores.category}</h2>
+        <h2 class="score__number" >${scores.score} <span>/ 100</span></h2>
         </div>
         `;
 
