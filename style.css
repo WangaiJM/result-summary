@@ -1,9 +1,13 @@
 @import url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
 :root {
   --color-danger: hsl(0, 100%, 67%);
+  --color-danger-light: hsla(0, 100%, 67%, 0.1);
   --color-warning: hsl(39, 100%, 56%);
+  --color-warning-light: hsla(39, 100%, 56%, 0.1);
   --color-success: hsl(166, 100%, 37%);
+  --color-success-light: hsla(166, 100%, 37%, 0.1);
   --color-primary: hsl(234, 85%, 45%);
+  --color-primary-light: hsla(234, 85%, 45%, 0.1);
 
   --color-background: hsl(252, 100%, 67%);
   --color-backgrund-variant: hsl(241, 81%, 54%);
@@ -15,6 +19,7 @@
   --color-text: hsl(221, 100%, 96%);
   --color-text-muted: hsl(241, 100%, 89%);
   --color-text-variant: hsl(224, 30%, 27%);
+  --color-text-variant-light: hsl(224, 30%, 27%, 0.5);
 }
 *,
 *::after,
@@ -27,7 +32,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "Hanken Grotesk", sans-serif;
 }
 p {
@@ -38,4 +43,191 @@ picture,
 svg {
   max-width: 100%;
   display: block;
+}
+.main {
+  min-height: 100dvh;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 2rem;
+  box-shadow: 0 0 10rem var(--color-primary-light);
+}
+.results {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    var(--color-background),
+    var(--color-backgrund-variant)
+  );
+  border-radius: 2rem;
+}
+.result__title {
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+.result__number {
+  background: linear-gradient(
+    180deg,
+    var(--color-background-circle),
+    var(--color-background-circle-variant)
+  );
+  width: 20rem;
+  height: 20rem;
+  margin: 3rem auto;
+  padding: 3rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.result__total {
+  font-weight: 600;
+  font-size: 6rem;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+.result__totals {
+  color: var(--color-text-muted);
+}
+.result__sub-title {
+  color: var(--color-text);
+  margin-bottom: 1.8rem;
+}
+.result__description {
+  color: var(--color-text-muted);
+  width: 66%;
+  margin: 0 auto;
+}
+.scores {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.scores__title {
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
+  color: var(--color-text-variant);
+}
+.scores__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.score__card {
+  display: flex;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  background-color: currentColor;
+  font-size: 1.6rem;
+  align-items: center;
+}
+.score__category {
+  margin-left: 1.5rem;
+}
+.score__number {
+  margin-left: auto;
+  color: var(--color-text-variant);
+}
+.score__number span {
+  color: var(--color-text-variant-light);
+}
+.Visual {
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+.Verbal {
+  color: var(--color-success);
+  background-color: var(--color-success-light);
+}
+.Memory {
+  color: var(--color-warning);
+  background-color: var(--color-warning-light);
+}
+.Reaction {
+  color: var(--color-danger);
+  background-color: var(--color-danger-light);
+}
+.btn {
+  background-color: var(--color-text-variant);
+  color: var(--color-text);
+  padding: 2rem 0;
+  border-radius: 100rem;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-top: auto;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.btn:hover,
+.btn:active {
+  background: linear-gradient(
+    180deg,
+    var(--color-background),
+    var(--color-backgrund-variant)
+  );
+}
+@media screen and (max-width: 920px) {
+  body {
+    font-size: 1.5rem;
+  }
+  .card {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .score__category,
+  .score__number {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  body {
+    font-size: 1.5rem;
+  }
+  .main {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .card {
+    flex-direction: column;
+    width: 100%;
+  }
+  .results {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .result__number {
+    height: 15rem;
+    width: 15rem;
+  }
+  .result__total {
+    font-size: 4.8rem;
+  }
+  .score__card {
+    padding: 1.5rem;
+  }
+  .score__category,
+  .score__number {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    margin-top: 3rem;
+    padding: 2rem;
+    font-size: 1.6rem;
+  }
 }

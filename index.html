@@ -14,13 +14,17 @@
 
     <title>Frontend Mentor | Results summary component</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <main class="main">
-      <div class="card container">
+      <div class="card">
         <div class="results">
           <h2 class="result__title">Your Result</h2>
-          <h1 class="result__number">76 <span>of 100</span></h1>
+          <div class="result__number">
+            <h1 class="result__total" id="total">76</h1>
+            <p class="result__totals">of 100</p>
+          </div>
           <h2 class="result__sub-title">Great</h2>
           <p class="result__description">
             You scored higher than 65% of the people who have taken these tests.
@@ -28,29 +32,8 @@
         </div>
         <div class="scores">
           <h2 class="scores__title">Summary</h2>
-          <div class="scores__container">
-            <div class="score__card">
-              <img src="./assets/images/icon-reaction.svg" alt="Reaction" />
-              <h2 class="score__category">Reaction</h2>
-              <h2 class="score__number">80 <span>/ 100</span></h2>
-            </div>
-            <div class="score__card">
-              <img src="./assets/images/icon-memory.svg" alt="Memory" />
-              <h2 class="score__category">Memory</h2>
-              <h2 class="score__number">92<span>/ 100</span></h2>
-            </div>
-            <div class="score__card">
-              <img src="./assets/images/icon-verbal.svg" alt="Verbal" />
-              <h2 class="score__category">Verbal</h2>
-              <h2 class="score__number">61 <span>/ 100</span></h2>
-            </div>
-            <div class="score__card">
-              <img src="./assets/images/icon-visual.svg" alt="Visual" />
-              <h2 class="score__category">Visual</h2>
-              <h2 class="score__number">72 <span>/ 100</span></h2>
-            </div>
-          </div>
-          <button class="btn">Continue</button>
+          <div class="scores__container"></div>
+          <button class="btn" id="score-btn">Continue</button>
         </div>
       </div>
     </main>
